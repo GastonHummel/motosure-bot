@@ -4,7 +4,7 @@
     <style type="text/css">
       html {
         height: 100%;
-        font-family: "Open Sans", sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-size: 14px;
       }
       body {
@@ -40,10 +40,7 @@
       }
     </style>
 
-    <meta
-      name="viewport"
-      content="width=device-width,height=device-height,initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
     <link rel="stylesheet" href="converse-chat.css" />
     <link
       rel="stylesheet"
@@ -51,61 +48,43 @@
       integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
     <script src="https://webchat-converse-snd-iad.ces.engageonechat.com/js/converse-chat.js"></script>
     <script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.min.js"></script>
   </head>
   <script type="text/javascript">
     $.urlParam = function (name) {
-      const results = new RegExp("[?&]" + name + "=([^&#]*)").exec(
-        window.location.href
-      );
+      const results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
       return results[1] || 0;
     };
-    const startPhrase =
-      "start&docId=" +
-      $.urlParam("doc_id") +
-      "&section=" +
-      decodeURIComponent($.urlParam("section"));
-    console.log("startPhrase: " + startPhrase);
+    const startPhrase = 'start&docId=' + $.urlParam('doc_id') + '&section=' + decodeURIComponent($.urlParam('section'));
+    console.log('startPhrase: ' + startPhrase);
     $(function () {
       var options = {
-        placeholder: "Type a message...",
+        placeholder: 'Type a message...',
         showCloseButton: false,
-        host: "https://webchat-designer-uk.converse.engageone.co",
-        converseHost: "https://designer-uk.converse.engageone.co",
-        serverUserImage:
-          "https://designerui-uk.converse.engageone.co/public/img/eo-square-mark.png",
-        container: "#chatcontainer",
+        host: 'https://webchat-designer-uk.converse.engageone.co',
+        converseHost: 'https://designer-uk.converse.engageone.co',
+        serverUserImage: 'https://motosure.dcsdemo.nl/assets/images/ms.png',
+        container: '#chatcontainer',
         showToolbar: true,
         reConnectDelay: 10000,
-        tenant: "sa3d20f",
-        botId: "9791c590-7c21-11eb-b21b-1324b376c717",
-        title: "Chat With Us",
+        tenant: 'sa3d20f',
+        botId: '9791c590-7c21-11eb-b21b-1324b376c717',
+        title: 'Chat With Us',
         // startPhrase: "start",
-        hideIcon: "fa-times", // See: https://fontawesome.com/icons?d=gallery&m=free
+        hideIcon: 'fa-times', // See: https://fontawesome.com/icons?d=gallery&m=free
         user: {
-          id: "TT00001",
-          first_name: "Friend",
-          last_name: "Any",
-          full_name: "Customer Any",
+          id: 'TT00001',
+          first_name: 'Friend',
+          last_name: 'Any',
+          full_name: 'Customer Any'
         },
-        startPhrase,
+        startPhrase
       };
 
       var webClient = ConverseWebClient.init(options);
